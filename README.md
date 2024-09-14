@@ -20,6 +20,13 @@ git clone https://github.com/karolcymerys/stanford-car-dataset-classification.gi
 pip install -r requirements.txt
 ```
 
+#### Download dataset
+
+1. [Download dataset](https://www.kaggle.com/datasets/jessicali9530/stanford-cars-dataset)  
+2. Open [_build_dataset.py_](./dataset/build_dataset.py) and edit `PATH_TO_DATASET_ZIP`  
+3. Execute `python ./dataset/build_dataset.py`  
+
+
 ## References
 ___
 
