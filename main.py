@@ -7,6 +7,7 @@ from dataset.train_val_split import VAL_ITEMS_IDX
 from loss_functions import FocalLoss
 from models.resnet.model import resnet18, resnet34, resnet50, resnet101, resnet152
 from models.vgg.model import VGG11, VGG13, VGG16, VGG19
+from models.inception.model import InceptionV1, InceptionV3
 from train import train
 
 DEVICE = 'cuda:0'

@@ -56,6 +56,8 @@ def __train(model: nn.Module,
 
             optimizer.zero_grad()
             loss = loss_fn(outputs, targets)
+            # Uncomment when training InceptionV1
+            # loss = loss_fn(outputs[0], targets) + 0.3 * loss_fn(outputs[1], targets) + 0.3 * loss_fn(outputs[2], targets)
             loss.backward()
             optimizer.step()
 
@@ -82,6 +84,9 @@ def __validate(model: nn.Module,
             outputs = model(imgs)
 
             loss = loss_fn(outputs, targets)
+            # Uncomment when training InceptionV1
+            # loss = loss_fn(outputs[0], targets) + 0.3 * loss_fn(outputs[1], targets) + 0.3 * loss_fn(outputs[2], targets)
+            # outputs = outputs[0]
             epoch_loss += loss.item()
 
             predicted_class = torch.argmax(nn.functional.log_softmax(outputs, dim=1), dim=1)
